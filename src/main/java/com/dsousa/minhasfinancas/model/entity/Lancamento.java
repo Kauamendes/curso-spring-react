@@ -19,13 +19,18 @@ import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 
 import com.dsousa.minhasfinancas.model.enumered.StatusLancamento;
 import com.dsousa.minhasfinancas.model.enumered.TipoLancamento;
+
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "lancamento", schema = "financas")
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Lancamento {
 
 	@Id
@@ -57,7 +62,7 @@ public class Lancamento {
 	@Enumerated(EnumType.STRING)
 	private TipoLancamento tipo;
 	
-	@Column(name = "status")
+	@Column(name = "status", columnDefinition = "default 'PENDENTE'",length = 255)
 	@Enumerated(EnumType.STRING)
 	private StatusLancamento status;
 
