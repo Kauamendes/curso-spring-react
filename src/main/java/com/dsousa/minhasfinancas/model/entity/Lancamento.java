@@ -62,7 +62,7 @@ public class Lancamento {
 	@Enumerated(EnumType.STRING)
 	private TipoLancamento tipo;
 	
-	@Column(name = "status", columnDefinition = "default 'PENDENTE'",length = 255)
+	@Column(name = "status")
 	@Enumerated(EnumType.STRING)
 	private StatusLancamento status;
 
